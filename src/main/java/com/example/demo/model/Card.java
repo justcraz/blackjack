@@ -21,6 +21,7 @@ public class Card {
     private int value;
     private String image;
 
+
     @Autowired
     static
     CardService service;

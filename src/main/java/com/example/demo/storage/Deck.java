@@ -11,7 +11,6 @@ import java.util.Arrays;
 import java.util.List;
 
 @Configuration
-@Data
 public class Deck {
     private List<Card> deck = new ArrayList<>(
             Arrays.asList(
@@ -69,5 +68,13 @@ public class Deck {
                         new Card (51,Suit.DIAMOND , Denomination.ACE , 11, "/image/TA.png")
             )
     );
+
+    public List<Card> getDeck() {
+        return deck;
+    }
+
+    public void setDeck(List<Card> deck) {
+        this.deck = deck;
+    }
 }
 

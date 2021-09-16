@@ -12,8 +12,6 @@ import java.util.List;
 import java.util.Optional;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Card {
     private int id;
     private Suit suit;
@@ -27,6 +25,53 @@ public class Card {
 
     public int getId() {
         return id;
+    }
+
+    public Card() {
+    }
+
+    public Card(int id, Suit suit, Denomination denomination, int value, String image) {
+        this.id = id;
+        this.suit = suit;
+        this.denomination = denomination;
+        this.value = value;
+        this.image = image;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Suit getSuit() {
+        return suit;
+    }
+
+    public void setSuit(Suit suit) {
+        this.suit = suit;
+    }
+
+    public Denomination getDenomination() {
+        return denomination;
+    }
+
+    public void setDenomination(Denomination denomination) {
+        this.denomination = denomination;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public Suit getSuitById(int id){

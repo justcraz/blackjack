@@ -83,6 +83,7 @@ public class Card {
         return null;
     }
 
+
     public Denomination getDenominationById(int id){
         Card card = service.getCardById(id);
         Denomination denomination = card.getDenomination();

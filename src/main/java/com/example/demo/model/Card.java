@@ -1,11 +1,5 @@
 package com.example.demo.model;
 
-import com.example.demo.service.CardService;
-import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.List;
-import java.util.Optional;
 
 public class Card {
     private int id;
@@ -74,7 +68,4 @@ public class Card {
         if(s==3) return Suit.DIAMOND;
         return null;
     }
-
-
-
 }

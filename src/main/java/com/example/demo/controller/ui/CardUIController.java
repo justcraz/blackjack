@@ -16,7 +16,6 @@ public class CardUIController {
 
     @GetMapping("/{id}")
     String getCardById(@RequestParam("id") int id){
-
         return "board";
     }
 

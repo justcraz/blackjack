@@ -3,7 +3,6 @@ package com.example.demo.storage;
 import com.example.demo.model.Card;
 import com.example.demo.model.Denomination;
 import com.example.demo.model.Suit;
-import lombok.Data;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.ArrayList;

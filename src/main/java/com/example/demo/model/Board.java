@@ -4,7 +4,7 @@ import com.example.demo.storage.Deck;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
-import java.util.Collections;
+
 import java.util.List;
 
 public class Board {
@@ -60,28 +60,12 @@ public class Board {
         this.message = message;
     }
 
-    public int getGamerScore(){
-        int score = 0;
-        for (int i = 0; i < gamerCards.size(); i++) {
-            score += gamerCards.get(i).getValue();
-        }
-        return score;
+    public boolean isTurn() {
+        return turn;
     }
 
-    public int getComputerScore(){
-        return this.getDealerCards().stream()
-                .mapToInt(Card::getValue).sum();
-    }
-
-    public void shufflerDeck(){
-        Collections.shuffle(deck);
-    }
-
-    public String createMessage(){
-        this.setMessage("player score" + this.getGamerScore()
-        + "dealer score" + this.getComputerScore()
-        + this.turn + "turn");
-        return this.getMessage();
+    public void setTurn(boolean turn) {
+        this.turn = turn;
     }
 
     @Override
@@ -93,4 +77,5 @@ public class Board {
                 ", message='" + message + '\'' +
                 '}';
     }
+
 }

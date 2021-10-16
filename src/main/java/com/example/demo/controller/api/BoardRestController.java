@@ -17,4 +17,6 @@ public class BoardRestController {
     public Board getNew(){
         return service.getBoard();
     }
+
+
 }

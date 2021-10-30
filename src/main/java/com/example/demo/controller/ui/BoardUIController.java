@@ -37,7 +37,6 @@ public class BoardUIController {
     String getLastCard(Model model){
         List<Card> cards = service.getBoard().getDeck();
         List<Card> myCards = service.getBoard().getGamerCards();
-
         model.addAttribute("cards",cards);
         return "board";
     }

@@ -18,6 +18,12 @@
 <h3>${message}</h3>
 <div class="board">
     <ul class="allCard">
+        <#list computerCards as card>
+            <li><img src="${card.image}" alt="" id="card${card.id}"></li>
+        </#list>
+    </ul>
+
+    <ul class="allCard">
         <#list cards as card>
             <li><img src="${card.image}" alt="" id="card${card.id}"></li>
         </#list>

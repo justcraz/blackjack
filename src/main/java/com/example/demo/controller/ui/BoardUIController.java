@@ -22,6 +22,8 @@ public class BoardUIController {
     String getBoard(Model model){
         List<Card> cards = service.getBoard().getDeck();
         List<Card> myCards = service.getBoard().getGamerCards();
+        List<Card> computerCards = service.getBoard().getDealerCards();
+        model.addAttribute("computerCards",computerCards);
         model.addAttribute("cards",cards);
         model.addAttribute("gamerCards",myCards);
         model.addAttribute("message",service.getBoard().getMessage());
@@ -33,6 +35,8 @@ public class BoardUIController {
         List<Card> cards = service.getBoard().getDeck();
         List<Card> myCards = service.getBoard().getGamerCards();
         Collections.shuffle(cards);
+        List<Card> computerCards = service.getBoard().getDealerCards();
+        model.addAttribute("computerCards",computerCards);
         model.addAttribute("cards",cards);
         model.addAttribute("gamerCards",myCards);
         model.addAttribute("message",service.getBoard().getMessage());
@@ -44,6 +48,8 @@ public class BoardUIController {
         service.giveCardToGamer();
         List<Card> cards = service.getBoard().getDeck();
         List<Card> myCards = service.getBoard().getGamerCards();
+        List<Card> computerCards = service.getBoard().getDealerCards();
+        model.addAttribute("computerCards",computerCards);
         model.addAttribute("cards",cards);
         model.addAttribute("gamerCards",myCards);
         model.addAttribute("message",service.getBoard().getMessage());
@@ -55,6 +61,8 @@ public class BoardUIController {
         service.createNewGame();
         List<Card> cards = service.getBoard().getDeck();
         List<Card> myCards = service.getBoard().getGamerCards();
+        List<Card> computerCards = service.getBoard().getDealerCards();
+        model.addAttribute("computerCards",computerCards);
         model.addAttribute("cards",cards);
         model.addAttribute("gamerCards",myCards);
         model.addAttribute("message",service.getBoard().getMessage());
@@ -64,6 +72,11 @@ public class BoardUIController {
     String Stop(Model model){
         List<Card> cards = service.getBoard().getDeck();
         List<Card> myCards = service.getBoard().getGamerCards();
+        service.getBoard().setTurn(false);
+        service.giveCardToComputer();
+        List<Card> computerCards = service.getBoard().getDealerCards();
+        service.createMessage();
+        model.addAttribute("computerCards",computerCards);
         model.addAttribute("cards",cards);
         model.addAttribute("gamerCards",myCards);
         model.addAttribute("message",service.getBoard().getMessage());

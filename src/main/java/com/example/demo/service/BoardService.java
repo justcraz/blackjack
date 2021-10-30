@@ -60,5 +60,10 @@ public class BoardService {
         board.setDeck(originalDeck.getDeck());
     }
 
-
+    public void giveCardToGamer(){
+        int lasIndex = getBoard().getDeck().size()-1;
+        Card card = this.getBoard().getDeck().get(lasIndex);
+        board.getGamerCards().add(card);
+        board.getDeck().remove(lasIndex);
+    }
 }

@@ -21,23 +21,29 @@ public class BoardUIController {
     @GetMapping("/all")
     String getBoard(Model model){
         List<Card> cards = service.getBoard().getDeck();
+        List<Card> myCards = service.getBoard().getGamerCards();
         model.addAttribute("cards",cards);
+        model.addAttribute("gamerCards",myCards);
         return "board";
     }
 
     @GetMapping("/all/shuffle")
     String getShuffle(Model model){
         List<Card> cards = service.getBoard().getDeck();
+        List<Card> myCards = service.getBoard().getGamerCards();
         Collections.shuffle(cards);
         model.addAttribute("cards",cards);
+        model.addAttribute("gamerCards",myCards);
         return "board";
     }
 
     @GetMapping("/all/give/me")
     String getLastCard(Model model){
+        service.giveCardToGamer();
         List<Card> cards = service.getBoard().getDeck();
         List<Card> myCards = service.getBoard().getGamerCards();
         model.addAttribute("cards",cards);
+        model.addAttribute("gamerCards",myCards);
         return "board";
     }
 }

@@ -14,8 +14,11 @@
         <#list cards as card>
             <li><img src="${card.image}" alt="" id="card${card.id}"></li>
         </#list>
-
-
+    </ul>
+    <ul class="allCard">
+        <#list gamerCards as card>
+            <li><img src="${card.image}" alt="" id="card${card.id}"></li>
+        </#list>
     </ul>
 </div>
 

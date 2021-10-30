@@ -24,6 +24,7 @@ public class BoardUIController {
         List<Card> myCards = service.getBoard().getGamerCards();
         model.addAttribute("cards",cards);
         model.addAttribute("gamerCards",myCards);
+        model.addAttribute("message",service.getBoard().getMessage());
         return "board";
     }
 
@@ -34,6 +35,7 @@ public class BoardUIController {
         Collections.shuffle(cards);
         model.addAttribute("cards",cards);
         model.addAttribute("gamerCards",myCards);
+        model.addAttribute("message",service.getBoard().getMessage());
         return "board";
     }
 
@@ -42,8 +44,10 @@ public class BoardUIController {
         service.giveCardToGamer();
         List<Card> cards = service.getBoard().getDeck();
         List<Card> myCards = service.getBoard().getGamerCards();
+        System.out.println(myCards);
         model.addAttribute("cards",cards);
         model.addAttribute("gamerCards",myCards);
+        model.addAttribute("message",service.getBoard().getMessage());
         return "board";
     }
 }

@@ -11,6 +11,11 @@ li {
     width: 70px;
     display: block;
 }
+
+h3{
+    color: white;
+}
+
 img {
     height: 130px;
 }

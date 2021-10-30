@@ -9,6 +9,7 @@
 <body>
 <button><a href="/ui/board/all/shuffle">shuffle</a></button>
 <button><a href="/ui/board/all/give/me">Give me a card</a></button>
+<h3>${message}</h3>
 <div class="board">
     <ul class="allCard">
         <#list cards as card>

@@ -32,4 +32,13 @@ public class BoardUIController {
         model.addAttribute("cards",cards);
         return "board";
     }
+
+    @GetMapping("/all/give/me")
+    String getLastCard(Model model){
+        List<Card> cards = service.getBoard().getDeck();
+        List<Card> myCards = service.getBoard().getGamerCards();
+
+        model.addAttribute("cards",cards);
+        return "board";
+    }
 }

@@ -8,10 +8,15 @@
 </head>
 <body>
 <button><a href="/ui/board/all/shuffle">shuffle</a></button>
+<button><a href="/ui/board/all/give/me">Give me a card</a></button>
 <div class="board">
-    <#list cards as card>
-        <img src="${card.image}" alt="" id="card${card.id}">
-    </#list>
+    <ul class="allCard">
+        <#list cards as card>
+            <li><img src="${card.image}" alt="" id="card${card.id}"></li>
+        </#list>
+
+
+    </ul>
 </div>
 
 </body>

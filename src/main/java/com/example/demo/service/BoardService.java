@@ -45,7 +45,8 @@ public class BoardService {
     public String createMessage(){
         board.setMessage("player score " + this.getGamerScore()
                 + " dealer score " + this.getComputerScore()
-                + " " +  board.isTurn() + " turn");
+                + " " +  board.isTurn() + " turn "
+                + (getBoard().getDeck().size()-1));
         return board.getMessage();
     }
 
@@ -58,18 +59,23 @@ public class BoardService {
         board.setDealerCards(new ArrayList<>());
         board.setGamerCards(new ArrayList<>());
         board.setDeck(originalDeck.getDeck());
+        board.setTurn(true);
         createMessage();
     }
 
     public void giveCardToGamer(){
         int lasIndex = getBoard().getDeck().size()-1;
-        if(lasIndex<0){
+        if(lasIndex<0 || board.getMessage().equals("Game Over")){
             board.setMessage("Game Over");
         }else{
             Card card = this.getBoard().getDeck().get(lasIndex);
             board.getGamerCards().add(card);
             board.getDeck().remove(lasIndex);
             createMessage();
+            if(getGamerScore()>21){
+                board.setMessage("Game Over");
+            }
         }
+
     }
 }

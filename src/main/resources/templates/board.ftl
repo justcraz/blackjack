@@ -8,7 +8,13 @@
 </head>
 <body>
 <button><a href="/ui/board/all/shuffle">shuffle</a></button>
+<br>
 <button><a href="/ui/board/all/give/me">Give me a card</a></button>
+<br>
+<button><a href="/ui/board/all/stop">Stop</a></button>
+<br>
+<button><a href="/ui/board/all/new/game">New game</a></button>
+
 <h3>${message}</h3>
 <div class="board">
     <ul class="allCard">

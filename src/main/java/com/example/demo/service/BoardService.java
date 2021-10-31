@@ -43,10 +43,15 @@ public class BoardService {
     }
 
     public String createMessage(){
-        board.setMessage("player score " + this.getGamerScore()
-                + " dealer score " + this.getComputerScore()
-                + " " +  board.isTurn() + " turn "
-                + (getBoard().getDeck().size()-1));
+        String whoseTurn;
+        if(board.isTurn()){
+            whoseTurn = " It's Your Turn ";
+        }else{
+            whoseTurn = " It's Opponent Turn ";
+        }
+        board.setMessage("Player score " + this.getGamerScore()
+                + " Dealer score " + this.getComputerScore()
+                +  whoseTurn + (getBoard().getDeck().size()));
         return board.getMessage();
     }
 
@@ -61,32 +66,53 @@ public class BoardService {
         board.setDeck(originalDeck.getDeck());
         board.setTurn(true);
         createMessage();
+        this.shufflerDeck();
+        board.setFinalMessage(" ");
     }
 
     public void giveCardToGamer(){
-        int lasIndex = getBoard().getDeck().size()-1;
+        int lastIndex = getBoard().getDeck().size()-1;
         if(this.getBoard().isTurn()){
-            if(lasIndex<0 || board.getMessage().equals("Game Over")){
-                board.setMessage("Game Over");
+            if(lastIndex<0 || board.getFinalMessage().equals("You Lose!!!!")){
+                board.setFinalMessage("You Lose!!!!");
             }else{
-                Card card = this.getBoard().getDeck().get(lasIndex);
+                Card card = this.getBoard().getDeck().get(lastIndex);
                 board.getGamerCards().add(card);
-                board.getDeck().remove(lasIndex);
+                board.getDeck().remove(lastIndex);
                 createMessage();
                 if(getGamerScore()>21){
-                    board.setMessage("Game Over");
+                    board.setFinalMessage("You Lose!!!!");
+                    board.setTurn(false);
+                    this.giveCardToComputer();
                 }
             }
         }
     }
 
     public void giveCardToComputer() {
-        for (int i = 0; i < 3; i++) {
-            int lastIndex = getBoard().getDeck().size()-1;
-            Card card = this.getBoard().getDeck().get(lastIndex);
-            board.getDeck().remove(lastIndex);
-            board.getDealerCards().add(card);
+        if(!board.isTurn()){
+            while(this.getComputerScore()<18){
+                int lastIndex = getBoard().getDeck().size()-1;
+                Card card = this.getBoard().getDeck().get(lastIndex);
+                board.getDealerCards().add(card);
+                board.getDeck().remove(lastIndex);
+            }
+            createMessage();
+            if(21 - this.getGamerScore() < 21 - this.getComputerScore()){
+                board.setFinalMessage("You win!!!");
+            }
+            if(this.getComputerScore() > 21 && this.getGamerScore() < 22){
+                board.setFinalMessage("You win!!!");
+            }else{
+                if(this.getGamerScore() > 21 || (21 - this.getGamerScore() > 21
+                        - this.getComputerScore())){
+                    board.setFinalMessage("You Lose!!!!");
+                }else{
+                    if(this.getComputerScore() == this.getGamerScore()){
+                        board.setFinalMessage("Draw");
+                    }
+                }
+            }
         }
-
     }
 }

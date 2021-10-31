@@ -4,11 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/main.css">
-    <title>Title</title>
+    <title>Black Jack</title>
+    <#list allCards as card>
+    <style>
+        #card${card.id}{
+            position: absolute;
+            left: ${card.value}px;
+        }
+    </style>
+    </#list>
 </head>
 <body>
-<button><a href="/ui/board/all/shuffle">shuffle</a></button>
-<br>
 <button><a href="/ui/board/all/give/me">Give me a card</a></button>
 <br>
 <button><a href="/ui/board/all/stop">Stop</a></button>
@@ -16,24 +22,27 @@
 <button><a href="/ui/board/all/new/game">New game</a></button>
 
 <h3>${message}</h3>
-<div class="board">
-    <ul class="allCard">
-        <#list computerCards as card>
-            <li><img src="${card.image}" alt="" id="card${card.id}"></li>
-        </#list>
-    </ul>
-
-    <ul class="allCard">
-        <#list cards as card>
-            <li><img src="${card.image}" alt="" id="card${card.id}"></li>
-        </#list>
-    </ul>
-    <ul class="allCard">
-        <#list gamerCards as card>
-            <li><img src="${card.image}" alt="" id="card${card.id}"></li>
-        </#list>
-    </ul>
+<br>
+<h3>${Finalmessage}</h3>
+<div class="table">
+    <div class="board">
+        <ul class="dealerCard">
+            <#list computerCards as card>
+                <li><img src="${card.image}" alt=""></li>
+            </#list>
+        </ul>
+        <br>
+        <ul class="myCard">
+            <#list gamerCards as card>
+                <li><img src="${card.image}" alt=""></li>
+            </#list>
+        </ul>
+    </div>
+        <div class="allCards">
+            <#list allCards as card>
+                    <img src="${card.image}" id="card${card.id}" alt="">
+            </#list>
+        </div>
 </div>
-
 </body>
 </html>

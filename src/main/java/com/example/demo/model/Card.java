@@ -24,6 +24,12 @@ public class Card {
         this.image = image;
     }
 
+    public Card(int id, String image, int value) {
+        this.id = id;
+        this.image = image;
+        this.value = value;
+    }
+
     public void setId(int id) {
         this.id = id;
     }

@@ -12,6 +12,7 @@ public class Board {
     private List<Card> gamerCards;
     private List<Card> dealerCards;
     private String message;
+    private String finalMessage;
     private boolean turn;
 
     @Autowired
@@ -25,7 +26,17 @@ public class Board {
         this.gamerCards = gamerCards;
         this.dealerCards = dealerCards;
         this.message = message;
+        this.finalMessage = " ";
         this.turn = true;
+    }
+
+
+    public String getFinalMessage() {
+        return finalMessage;
+    }
+
+    public void setFinalMessage(String finalMessage) {
+        this.finalMessage = finalMessage;
     }
 
     public List<Card> getDeck() {

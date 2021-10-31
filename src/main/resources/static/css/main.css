@@ -1,15 +1,17 @@
 body {
     background-color: green;
 }
-ul {
-    margin-top:100px;
-    display: flex;
-    flex-direction: row;
-}
+
 li {
-    margin-right: 60px;
+    margin-left: 60px;
     width: 70px;
     display: block;
+}
+
+ul {
+    margin-top:30px;
+    display: flex;
+    flex-direction: row;
 }
 
 h3{
@@ -20,16 +22,41 @@ img {
     height: 130px;
 }
 
+.table{
+    display: flex;
+    flex-direction: row;
+}
+
 .board {
-    width: 60%;
+    width: 62%;
+    height: 360px;
     background: green;
     border: solid 5px brown;
     border-radius: 251px;
-    padding: 64px;
+    padding: 40px;
     margin: 0 auto;
 }
 
-.allCard {
+.myCard {
     display: flex;
     flex-direction: row;
+}
+
+.dealerCard {
+    display: flex;
+    flex-direction: row;
+    height: 130px;
+}
+
+.dealerCard ul{
+    display: flex;
+    flex-direction: row;
+}
+
+.allCards{
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-right: 50px;
+    width: 190px;
 }

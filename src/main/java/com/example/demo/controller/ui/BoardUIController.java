@@ -24,8 +24,7 @@ public class BoardUIController {
         List<Card> computerCards = service.getBoard().getDealerCards();
         List<Card> allCards = new ArrayList<>();
         for (int i = 0; i < service.getBoard().getDeck().size()-1; i++) {
-            Card card = new Card(i,"/image/back.png",3*i);
-            allCards.add(card);
+            allCards.add(new Card(i,"/image/back.png",3*i));
         }
         model.addAttribute("allCards",allCards);
         model.addAttribute("computerCards",computerCards);
@@ -42,8 +41,7 @@ public class BoardUIController {
         List<Card> computerCards = service.getBoard().getDealerCards();
         List<Card> allCards = new ArrayList<>();
         for (int i = 0; i < service.getBoard().getDeck().size()-1; i++) {
-            Card card = new Card(i,"/image/back.png",3*i);
-            allCards.add(card);
+            allCards.add(new Card(i,"/image/back.png",3*i));
         }
         model.addAttribute("allCards",allCards);
         model.addAttribute("computerCards",computerCards);
@@ -60,8 +58,7 @@ public class BoardUIController {
         List<Card> computerCards = service.getBoard().getDealerCards();
         List<Card> allCards = new ArrayList<>();
         for (int i = 0; i < service.getBoard().getDeck().size()-1; i++) {
-            Card card = new Card(i,"/image/back.png",3*i);
-            allCards.add(card);
+            allCards.add(new Card(i,"/image/back.png",3*i));
         }
         model.addAttribute("allCards",allCards);
         model.addAttribute("computerCards",computerCards);
@@ -80,8 +77,7 @@ public class BoardUIController {
         service.createMessage();
         List<Card> allCards = new ArrayList<>();
         for (int i = 0; i < service.getBoard().getDeck().size()-1; i++) {
-            Card card = new Card(i,"/image/back.png",3*i);
-            allCards.add(card);
+            allCards.add(new Card(i,"/image/back.png",3*i));
         }
         model.addAttribute("allCards",allCards);
         model.addAttribute("computerCards", computerCards);

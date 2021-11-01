@@ -6,20 +6,19 @@
     <link rel="stylesheet" href="/css/main.css">
     <title>Black Jack</title>
     <#list allCards as card>
-    <style>
-        #card${card.id}{
-            position: absolute;
-            left: ${card.value}px;
-        }
-    </style>
+        <style>
+            #card${card.id}{
+                position: absolute;
+                left: ${card.value}px;
+            }
+        </style>
     </#list>
 </head>
 <body>
-<button><a href="/ui/board/all/give/me">Give me a card</a></button>
+
+<button onclick="location.href='/ui/board/all/stop'">Stop</button>
 <br>
-<button><a href="/ui/board/all/stop">Stop</a></button>
-<br>
-<button><a href="/ui/board/all/new/game">New game</a></button>
+<button onclick="location.href='/ui/board/all/new/game'">New Game</button>
 
 <h3>${message}</h3>
 <br>
@@ -39,6 +38,7 @@
         </ul>
     </div>
         <div class="allCards">
+            <button class="giveMe" onclick="location.href='/ui/board/all/give/me'">Give me a card</button>
             <#list allCards as card>
                     <img src="${card.image}" id="card${card.id}" alt="">
             </#list>

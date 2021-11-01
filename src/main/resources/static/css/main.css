@@ -53,10 +53,16 @@ img {
     flex-direction: row;
 }
 
+.giveMe{
+    z-index: 1;
+    width: 50%;
+    margin: 0 auto;
+}
+
 .allCards{
     display: flex;
     align-items: center;
     position: relative;
-    padding-right: 50px;
-    width: 190px;
+    margin-right: 60px;
+    width: 180px;
 }

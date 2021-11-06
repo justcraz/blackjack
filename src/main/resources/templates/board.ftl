@@ -21,8 +21,9 @@
 <button onclick="location.href='/ui/board/all/new/game'">New Game</button>
 
 <h3>${message}</h3>
-<br>
-<h3>${Finalmessage}</h3>
+<div class="finalMessage">
+    <h3>${Finalmessage}</h3>
+</div>
 <div class="table">
     <div class="board">
         <ul class="dealerCard">

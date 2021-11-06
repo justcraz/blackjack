@@ -91,7 +91,7 @@ public class BoardService {
 
     public void giveCardToComputer() {
         if(!board.isTurn()){
-            while(this.getComputerScore()<18){
+            while(this.getComputerScore()<18 && getBoard().getDeck().size()>0){
                 int lastIndex = getBoard().getDeck().size()-1;
                 Card card = this.getBoard().getDeck().get(lastIndex);
                 board.getDealerCards().add(card);

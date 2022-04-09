@@ -11,10 +11,19 @@
                 position: absolute;
                 left: ${card.value}px;
             }
+
+            body {
+                background: url(https://static.vecteezy.com/system/resources/previews/002/582/107/non_2x/poker-black-background-playing-card-symbols-pattern-blackjack-vector.jpg) no-repeat center top fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
         </style>
     </#list>
 </head>
 <body>
+
 
 <button onclick="location.href='/ui/board/all/stop'">Stop</button>
 <br>
@@ -28,13 +37,13 @@
     <div class="board">
         <ul class="dealerCard">
             <#list computerCards as card>
-                <li><img src="${card.image}" alt=""></li>
+                <li class="pointer"><img src="${card.image}" alt=""></li>
             </#list>
         </ul>
         <br>
         <ul class="myCard">
             <#list gamerCards as card>
-                <li><img src="${card.image}" alt=""></li>
+                <li class="pointer"><img src="${card.image}" alt=""></li>
             </#list>
         </ul>
     </div>

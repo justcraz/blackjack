@@ -19,7 +19,7 @@ h3{
 }
 
 img {
-    height: 130px;
+    height: 135px;
 }
 
 .table{
@@ -70,4 +70,25 @@ img {
 .finalMessage{
     height: 22px;
     width: 120px;
+}
+
+
+.start_button{
+    color: white;
+    width: 210px;
+    height: 50px;
+    border-radius: 12px;
+    font-size: 15px;
+    margin-top: 25%;
+    margin-left: 45%;
+    /*margin: 0 auto;*/
+    text-decoration-style: initial;
+    display: inline-block;
+}
+
+button{
+    background-color: white;
+    width: 150px;
+    height: 40px;
+    border-radius: 12px;
 }
